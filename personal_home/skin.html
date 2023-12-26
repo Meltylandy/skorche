@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="kr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css" type="text/css">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+
+    <title>[##_title_##]</title>
+</head>
+
+<body>
+
+    <!-- 티스토리 연산자 사용 -->
+
+    <s_t3>
+
+        <div class="container">
+
+            <header>
+                <div class="header">
+                    <div class="header1">
+                        <span id="tab">
+                            <i id="headphone" class="ri-headphone-line"></i>&nbsp; [##_title_##]&nbsp;
+                            <i class="ri-close-line"></i>
+                        </span> &nbsp;&nbsp;
+                        <span id="plus" class="tooltip-container"><a href="[##_blog_link_##]guestbook">+</a></span>
+                    </div>
+                    <div class="header2">
+                        <span id="left"><i class="ri-arrow-left-line"></i></span> &nbsp; &nbsp;
+                        <span id="right"><i class="ri-arrow-right-line"></i></span> &nbsp; &nbsp;
+                        <a href="[##_blog_link_##]notice"><span id="home"><i class="ri-home-line"></i></span></a> &nbsp;
+                        &nbsp;
+                        <span id="link">제목</span> &nbsp; &nbsp;
+                        <span id="more"><i class="ri-more-2-line"></i></span>
+                        <span id="moremobile"><i class="ri-more-2-line"></i></span>
+                    </div>
+                </div>
+            </header>
+            <div class="content">
+                <div class="inline">
+                    <!-- 공지 -->
+                    <s_notice_rep>
+                        <div class="article">
+                            <div class="notice">
+                                <div class="noticenote">
+                                    <span>[##_notice_rep_desc_##]</span>
+                                </div>
+                            </div>
+                        </div>
+                    </s_notice_rep>
+
+                    <!-- 본문 -->
+                    <s_article_rep>
+                        <s_permalink_article_rep>
+                            <div class="article">
+                                <div class="note">
+                                    <div class="title">
+                                        <span id="title">[##_article_rep_title_##]</span>
+                                        <span id="date">
+                                            <s_ad_div>
+                                                <span>
+                                                    <a href="[##_s_ad_m_link_##]">수정</a>
+                                                </span>
+                                            </s_ad_div>
+                                            [##_article_rep_date_month_##]. [##_article_rep_date_day_##]
+                                        </span>
+                                    </div>
+                                    <hr>
+                                    <p id="note">[##_article_rep_desc_##]</p>
+                                </div>
+                            </div>
+                        </s_permalink_article_rep>
+                    </s_article_rep>
+
+                    <!-- 목록 -->
+                    <s_list>
+                        <div class="article">
+                            <div class="list">
+                                <p id="categoryname">
+                                    [##_list_conform_##]</p>
+                                <s_list_rep>
+                                    <div class="listcontent">
+                                        <p id="listcontent">
+                                            <span><a
+                                                    href="[##_article_rep_link_##]">[##_article_rep_title_##]</a></span>
+                                            <span>[##_article_rep_date_##]</span>
+                                        </p>
+                                    </div>
+                                </s_list_rep>
+
+                                <s_list_empty>
+                                    <div class="empty">
+                                        <p>No post</p>
+                                    </div>
+                                </s_list_empty>
+                            </div>
+
+                        </div>
+                    </s_list>
+
+                    <!-- 보호글  -->
+                    <s_article_protected>
+                        <div class="article">
+                            <!-- 보호글 목록  -->
+                            <s_index_article_rep>
+                                <div class="listprivate">
+                                    <div class="list">
+                                        <s_list_rep>
+                                            <div class="listcontent">
+                                                <p id="listcontent">
+                                                    <span><a
+                                                            href="[##_article_rep_link_##]">[##_article_rep_title_##]</a></span>
+                                                    <span>[##_article_rep_date_##]</span>
+                                                </p>
+                                            </div>
+                                        </s_list_rep>
+                                    </div>
+                                </div>
+                            </s_index_article_rep>
+                        </div>
+
+                        <!--비밀번호폼-->
+                        <s_permalink_article_rep>
+                            <div class="article">
+                                <div class="password">
+                                    <p><i class="ri-lock-2-line"></i></p><br>
+                                    <form class="protected-form" onsubmit="[##_article_dissolve_##]">
+                                        <input type="password" id="[##_article_password_##]"
+                                            name="[##_article_password_##]" value="" title="PASSWORD" placeholder="here"
+                                            maxlength="30">
+                                        <br>
+                                        <button type="submit">OK</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </s_permalink_article_rep>
+                    </s_article_protected>
+
+                    <!-- 방명록 -->
+                    <s_guest>
+
+                        <div class="guestcontainer">
+                            <!-- 방명록 입력폼 -->
+                            <s_guest_input_form>
+                                <div class="guestbook">
+                                    <s_guest_member>
+                                        <s_guest_form>
+                                            <div class="guestinfo">
+                                                <label for="name"><b>name</b></label>
+                                                <input type="text" name="[##_guest_input_name_##]"
+                                                    value="[##_guest_name_##]" maxlength="6">
+                                                <label for="password"><b>password</b></label>
+                                                <input type="text" name="[##_guest_input_password_##]"
+                                                    value="[##_guest_password_##]" maxlength="6">
+                                            </div>
+                                        </s_guest_form>
+                                    </s_guest_member>
+                                    <div class="guestinput">
+                                        <textarea name="[##_guest_textarea_body_##]" cols="50" rows="6"></textarea>
+                                        <input type="submit" value="send" onclick="[##_guest_onclick_submit_##]">
+                                    </div>
+                                </div>
+
+                            </s_guest_input_form>
+                            <br>
+
+                            <!-- 방명록 리스트 출력 -->
+                            <s_guest_container>
+                                <div class="guestlist">
+                                    <ol>
+                                        <s_guest_rep>
+                                            <li class="guestli" id='[##_guest_rep_id_##]'>
+                                                <div class="[##_guest_rep_class_##]" id="guestarticle">
+                                                    <span class="name">[##_guest_rep_name_##]</span>
+                                                    <span class="date"> [##_guest_rep_date_##]</span>
+                                                    <span class="control">
+                                                        <a href="#"
+                                                            onclick="[##_guest_rep_onclick_delete_##]">DELETE</a>
+                                                        <a href="#" onclick="[##_guest_rep_onclick_reply_##]">REPLY</a>
+                                                    </span>
+                                                    <p class="guestdesc">[##_guest_rep_desc_##]</p>
+                                                </div>
+                                                <s_guest_reply_container>
+                                                    <div class="guestreplylist">
+                                                        <ul id="guestreply">
+                                                            <s_guest_reply_rep>
+                                                                <li id='[##_guest_rep_id_##]'>
+                                                                    <div class="[##_guest_rep_class_##]">
+                                                                        <span class="name">[##_guest_rep_name_##]</span>
+                                                                        <span class="date">
+                                                                            [##_guest_rep_date_##]</span>
+                                                                        <span class="control">
+                                                                            <a href="#"
+                                                                                onclick="[##_guest_rep_onclick_delete_##]">DELETE
+                                                                            </a>
+                                                                        </span>
+                                                                        <p class="guestdesc">[##_guest_rep_desc_##]</p>
+                                                                    </div>
+                                                                </li>
+                                                            </s_guest_reply_rep>
+                                                        </ul>
+                                                    </div>
+                                                </s_guest_reply_container>
+                                            </li>
+                                        </s_guest_rep>
+                                    </ol>
+                                </div>
+                            </s_guest_container>
+                        </div>
+                    </s_guest>
+                </div>
+            </div>
+            <div class="page">
+                <s_paging>
+
+                    <a href="[##_prev_page_##]" class="[##_no_more_prev_##] btn-prev">
+                        <button>
+                            <i class="ri-arrow-drop-left-line"></i>
+                        </button>
+                    </a>
+                    <s_paging_rep>
+                        <a [##_paging_rep_link_##] class="num">[##_paging_rep_link_num_##]</a>
+                    </s_paging_rep>
+                    <a href="[##_next_page_##]" class="[##_no_more_next_##] btn-next">
+                        <button>
+                            <i class="ri-arrow-drop-right-line"></i>
+                        </button>
+                    </a>
+
+                </s_paging>
+            </div>
+
+            <div class="category">
+                <div class="categorylist">[##_category_list_##]</div>
+            </div>
+        </div>
+
+        <!-- 홈커버 -->
+        <s_cover_group>
+            <s_cover_rep>
+                <div class="homecovertotal">
+                    <div class="homecover">
+                        <div class="musicplayer">
+                            <div class="circle1">
+                                <div class="circle2">
+                                    <div class="circle3">
+                                        <a href="https://www.youtube.com/watch?v=srgbUWS2p6s">
+                                            <div class="circle4" id="youtube"></div>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="player">
+                                <div id="musictitle">Erosion</div>
+                                <div id="musicsinger">Eruno</div>
+                                <div id="slider">
+                                    <input type="range" min="0" value="0" class="bar" id="timeSlider">
+                                    <br>
+                                    <span id="starttime">0:00</span>
+                                    <span id="finishtime">2:50</span>
+                                </div>
+                                <div class="musicbutton">
+                                    <button><i class="ri-skip-left-line"></i></button>
+                                    <button onclick="playpause()"><i id="playPauseIcon"
+                                            class="ri-play-line"></i></button>
+                                    <a href="[##_blog_link_##]notice"><button><i
+                                                class="ri-skip-right-line"></i></button></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="click">
+                            <span>CLICK THE NEXT BUTTON</span>
+                        </div>
+                        <div class="listbar" style="display: none;">
+                            <div class="musiclist">
+                                <table>
+                                    <tr>
+                                        <td>夜魔<br><span id="singer">はるまきごはん</span></td>
+                                        <td>곡 길이</td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="2">
+                                            <hr>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>あだぽしゃ<br><span id="singer">いよわ</span></td>
+                                        <td>곡 길이</td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="2">
+                                            <hr>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>完全感覚Dreamer<br><span id="singer">えるの</span></td>
+                                        <td>곡 길이</td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="2">
+                                            <hr>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>感情ディシーブ<br><span id="singer">弱酸性</span></td>
+                                        <td>곡 길이</td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="2">
+                                            <hr>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>シャンティ<br><span id="singer">そらる, りぶ</span></td>
+                                        <td>곡 길이</td>
+                                    </tr>
+                                </table>
+                            </div>
+                            <div class="down" id="listopen">
+                                <button id="buttonopen"><i class="ri-arrow-drop-down-line"></i></button>
+                                <button id="buttonclose"><i class="ri-arrow-drop-up-line"></i></button>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <script>
+                    var audio = new Audio("./images/erosion.m4a");
+                    var isPlaying = false;
+
+                    function playpause() {
+                        if (isPlaying) {
+                            audio.pause();
+                            isPlaying = false;
+                        } else {
+                            audio.play();
+                            isPlaying = true;
+                        }
+                    }
+                </script>
+            </s_cover_rep>
+        </s_cover_group>
+
+        <div class="sideback"></div>
+        <div class="sidebar">
+            <span>[##_category_list_##]</span>
+        </div>
+
+        <script src="./images/category.js"></script>
+        <script src="./images/categoryposition.js"></script>
+        <script src="./images/tooltip.js"></script>
+        <script src="./images/cursor.js"></script>
+        <script src="./images/slidebar.js"></script>
+    </s_t3>
+
+</body>
+
+</html>

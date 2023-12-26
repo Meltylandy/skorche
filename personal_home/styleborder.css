@@ -1,0 +1,1045 @@
+@import url('https://cdn.jsdelivr.net/gh/quiple/hbios-sys@latest/hbios-sys.css');
+@import url('https://fonts.googleapis.com/css2?family=DotGothic16&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+@font-face {
+    font-family: "AppleSD";
+    src: url("./images/AppleSDGothicNeoM.ttf") format("truetype");
+    font-weight: normal;
+    unicode-range: U+3041-3096, U+309D, U+309E, U+30A1-30FA, U+30FC, U+4E00-9FEA, U+3400-4DB5, U+F900-FA6D;
+}
+
+@font-face {
+    font-family: 'Pretendard-Regular';
+    src: url('./images/PretendardVariable.ttf') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
+
+body {
+    overflow: overlay;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-weight: 300;
+    padding: 0;
+    margin: 0;
+    font-size: 0.9rem;
+    color: #3242a8;
+}
+
+hr {
+    margin: 0;
+    background-color: #3242a8;
+    height: 0.1px;
+    border: 0;
+}
+
+a {
+    text-decoration: none;
+    color: #3242a8;
+    cursor: pointer;
+}
+
+button {
+    cursor: pointer;
+}
+
+::selection {
+    color: transparent;
+    text-shadow: 0 0 1.5px rgba(50, 66, 168, 0.5);
+}
+
+p {
+    margin: 0;
+}
+
+div.container_postbtn {
+    display: none;
+}
+
+ul {
+    padding: 0;
+}
+
+li {
+    list-style: none;
+    padding: 0;
+}
+
+ol {
+    padding: 0;
+}
+
+input:focus {
+    outline: none;
+}
+
+/* 다크모드 토글버튼 */
+
+.ri-sun-fill {
+    color: #3242a8;
+}
+
+.ri-moon-clear-fill {
+    color: #f1c40f;
+    display: none;
+}
+
+/* 툴팁 */
+
+.tooltip {
+    position: absolute;
+    background-color: white;
+    color: #3242a8;
+    padding: 4px 6px;
+    border-radius: 4px;
+    font-size: 0.7rem;
+    z-index: 9999;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+
+.tooltip.show {
+    opacity: 1;
+}
+
+
+/* 뮤직 플레이어 */
+
+.homecover {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* 수평 가운데 정렬 */
+    align-items: center;
+    /* 수직 가운데 정렬 */
+    height: 100vh;
+    /* 화면 전체 높이를 차지하도록 설정 */
+}
+
+.musicplayer {
+    border: 1px solid #3242a8;
+    width: 300px;
+    height: 110px;
+    border-radius: 100px 0 0 100px;
+    color: #3242a8;
+}
+
+.musicplayer .circle1 {
+    position: relative;
+    border-radius: 100%;
+    background-color: white;
+    border: 1px solid #3242a8;
+    width: 100px;
+    height: 100px;
+    margin: 4px 0 0 5px;
+    display: inline-block;
+}
+
+.musicplayer .circle2 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 100%;
+    border: 1px solid #3242a8;
+    background-color: white;
+    width: 30px;
+    height: 30px;
+}
+
+.musicplayer .circle3 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 100%;
+    background-color: rgba(50, 66, 168, 0.1);
+    width: 30px;
+    height: 30px;
+}
+
+.musicplayer .circle4 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 100%;
+    border: 1px solid rgba(50, 66, 168, 0.7);
+    background-color: white;
+    width: 15px;
+    height: 15px;
+}
+
+.player {
+    display: inline-block;
+    padding: 10px 0 10px 10px;
+    vertical-align: top;
+    width: 160px;
+}
+
+.player #musictitle {
+    margin: 0;
+    height: fit-content;
+}
+
+.player #musicsinger {
+    margin: 0;
+    font-size: 0.7rem;
+    color: rgba(50, 66, 168, 0.5);
+}
+
+.player #slider {
+    clear: both;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    height: 27px;
+}
+
+.player .bar {
+    -webkit-appearance: none;
+    width: 100%;
+    height: 0.5px;
+    background: #3242a8;
+    outline: none;
+    opacity: 0.7;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+    border-radius: 5px;
+}
+
+.player .bar::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 6px;
+    height: 6px;
+    background: #3242a8;
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+.player .bar::-moz-range-thumb {
+    width: 6px;
+    height: 6px;
+    background: #3242a8;
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+.player span#starttime {
+    font-size: 0.5rem;
+    vertical-align: top;
+}
+
+.player span#finishtime {
+    font-size: 0.5rem;
+    vertical-align: top;
+    float: right;
+}
+
+.player .musicbutton {
+    text-align: center;
+    vertical-align: top;
+    font-size: 1.1rem;
+}
+
+.player .musicbutton button {
+    background-color: transparent;
+    color: #3242a8;
+    border: none;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+.click {
+    font-size: 0.5rem;
+    opacity: 0.7;
+    margin-top: 10px;
+}
+
+.musiclist {
+    font-size: 0.8rem;
+    border: 1px solid #3242a8;
+    border-width: 0 1px 0px 1px;
+    width: 230px;
+    margin-left: 70px;
+    display: block;
+    max-height: 0; /* 초기에는 최대 높이를 0으로 설정합니다. */
+    transition: max-height 0.5s ease-out; /* 천천히 나타나도록 설정합니다. */
+    height: 100px;
+    overflow: scroll;
+}
+
+.musiclist.active {
+    max-height: 300px; /* 클릭 시 나타날 최대 높이 설정 (원하는 높이로 조절 가능) */
+    border-bottom-width: 1px;
+}
+
+.musiclist table {
+    width: 220px;
+    margin: auto;
+}
+
+.musiclist tr td:nth-child(2) {
+    text-align: center;
+}
+
+#singer {
+    font-size: 0.6rem;
+    vertical-align: top;
+    opacity: 0.7;
+}
+
+.listbar .down {
+    display: flex;
+    justify-content: flex-end;
+}
+
+#buttonopen, #buttonclose {
+    background-color: transparent;
+    color: #3242a8;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.listbar .down button:hover {
+    transform: scale(1.2); /* 버튼이 약간 커지는 효과를 줍니다. */
+}
+
+/* .homecovertotal {
+    position: fixed; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: white;
+    z-index: 9999; 
+} 
+*/
+
+/* 헤더 */
+
+header {
+    display: inline-block;
+}
+
+header #tab {
+    border: 1px solid #3242a8;
+    border-width: 1px 1px 0 1px;
+    padding: 3px 10px;
+    border-radius: 10px 10px 0 0;
+}
+
+.header1 {
+    box-sizing: border-box;
+    margin: 3px 10px 3px 0;
+}
+
+.header2 {
+    border: 1px solid #3242a8;
+    width: 100%;
+    display: flex;
+    padding: 5px;
+    box-sizing: border-box;
+}
+
+.header #link {
+    width: 84.3%;
+    height: auto;
+    border: 1px solid #3242a8;
+    border-radius: 20px;
+    padding-left: 10px;
+    padding-bottom: 1px;
+}
+
+#left, #right, #home, #more {
+    cursor: pointer;
+}
+
+/* 본문 */
+
+.container {
+    position: relative;
+}
+
+.category {
+    position: absolute;
+    top: 27px;
+    left: 0;
+    border: 1px solid #3242a8;
+    border-width: 1px 1px 1px 0;
+    max-height: none;
+    overflow: hidden;
+    transition: max-height 1s ease-out;
+    box-sizing: border-box;
+}
+
+.category.active {
+    max-height: 1000px; /* 적절한 값으로 최대 높이를 설정하세요 */
+}
+
+.categorylist {
+    padding: 0 10px;
+}
+
+header {
+    margin: auto;
+    margin-top: 6%;
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+}
+
+.content {
+    margin: auto;
+    flex-direction: column;
+    width: 50%;
+    overflow: scroll;
+    border-bottom: 1px solid #3242a8;
+}
+
+.content::-webkit-scrollbar {
+    display: none;
+}
+
+.article {
+    height: 340px;
+    overflow: scroll;
+    border: 1px solid #3242a8;
+    border-width: 0 1px;
+    padding: 4%;
+    word-spacing: 110%;
+    line-height: 130%;
+    scrollbar-width: thin; /* Firefox */
+    scrollbar-color: #3242a8 transparent; /* Firefox */
+}
+
+.article::-webkit-scrollbar {
+    width: 6px; /* 스크롤바의 너비를 조정할 수 있습니다 */
+}
+
+.article::-webkit-scrollbar-thumb {
+    background-color: #3242a8; /* 스크롤바의 색상을 지정할 수 있습니다 */
+    border-radius: 3px; /* 스크롤바의 모서리를 둥글게 만들 수 있습니다 */
+}
+
+.article::-webkit-scrollbar-thumb:hover {
+    background-color: #1f2c7b; /* 스크롤바에 마우스를 올렸을 때 색상을 변경할 수 있습니다 */
+}
+
+.title {
+    margin-bottom: 1.5%;
+}
+
+#title {
+    font-weight: bold;
+}
+
+.title #date {
+    float: right;
+    font-size: 0.6rem;
+}
+
+#note {
+    margin: 1.5% 0;
+}
+
+.list {
+    margin: auto;
+    width: 60%;
+}
+
+.list #categoryname {
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+#listcontent {
+    display: flex; 
+    align-items: center;
+    justify-content: space-between;
+    margin: 3px 0;
+}
+
+#listcontent span:nth-child(2) {
+    font-size: 0.7rem;
+}
+
+.empty {
+    margin: 20px 0;
+}
+
+.password {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.password input {
+    background-color: transparent;
+    border: 0;
+    text-align: center;
+    color: #3242a8;}
+
+.password input::placeholder {
+    text-align: center;
+    color: rgba(50, 66, 168, 0.5);
+}
+
+.password input:focus {
+    text-decoration: none;
+}
+
+.password form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.password button {
+    background-color: transparent;
+    color: #3242a8;
+    margin: auto;
+    border: none;
+}
+
+.password button:hover {
+    color: transparent;
+    text-shadow: 0 0 1.5px rgba(50, 66, 168, 0.5);
+}
+
+.guestcontainer  {
+    border: 1px solid #3242a8;
+    border-width: 0 1px;
+    height: 400px;
+}
+
+.guestbook {
+    width: 60%;
+    margin: auto;
+    padding: 3%;
+}  
+
+.guestinfo input {
+    background-color: transparent;
+    border: 0;
+    color: #3242a8;
+}
+
+.guestinput textarea {
+    background-color: transparent;
+    margin: 1% 0;
+    width: 100%;
+    height: 50px;
+    border: 1px solid #3242a8;
+    color: #3242a8;
+}
+
+.guestinput textarea:focus {
+    outline: none;
+}
+
+.guestinput input {
+    background-color: transparent;
+    width: 100%;
+    border: none;
+    color: #3242a8;
+    cursor: pointer;
+}
+
+.guestlist {
+    width: 60%;
+    margin: auto;
+}
+
+.guestli {
+    border: 1px solid #3242a8;
+}
+
+#guestarticle {
+    border-bottom: 1px solid #3242a8;
+    padding: 8px 10px;
+}
+
+.guestlist .name {
+    font-weight: bold;
+}
+
+.guestlist .date, .guestlist .control {
+    font-size: 0.7rem;
+    opacity: 0.7;
+} 
+
+.guestdesc {
+    margin: 13px 0 8px 0;
+}
+
+.guestlist li {
+    list-style: none;
+}
+
+.guestreplylist {
+    height: 100%;
+}
+
+.guestspace {
+    width: 5%;
+    height: 100%;
+    background-color: rgba(50, 66, 168, 0.5);
+}
+
+#guestreply {
+    display: inline-block;
+    width: auto;
+    border-left: 1px solid #3242a8;
+    margin-left: 5%;
+    font-size: 0.8rem;
+    padding: 6px 9px;
+}
+
+#guestreply .guestdesc {
+    margin: 8px 0 5px 0;
+}
+
+s_paging {
+    margin: auto;
+    flex-direction: column;
+    
+}
+
+.page {
+    height: 28px;
+    margin: auto;
+    flex-direction: column;
+    width: 50%;
+    padding: 5px;
+    box-sizing: border-box;
+    text-align: right;
+    font-size: 0.7rem;
+    border: 1px solid #3242a8;
+    border-width: 0 1px 1px 1px;
+}
+
+.page button {
+    background-color: transparent;
+    border: 0;
+}
+
+.empty {
+    text-align: center;
+}   
+
+/* 다크모드 수동
+body {
+    transition: background-color 0.5s ease-in-out;
+}
+
+#moon {
+    display: none;
+}
+
+.darkmode.dark #sun {
+    display: none;
+}
+
+.darkmode.dark #moon {
+    display: inline-block;
+}
+
+.dark-mode body {
+    background-color: #000316 !important;
+    color: #f1c40f;
+}
+
+.dark-mode a {
+    color: #f1c40f;
+}
+
+.dark-mode hr {
+    margin: 0;
+    background-color: #f1c40f;
+}
+
+.dark-mode ::selection {
+    color: transparent;
+    text-shadow: 0 0 2px rgba(252, 186, 3, 0.5);
+}
+
+.dark-mode header #tab {
+    border: 1px solid #f1c40f;
+}
+
+.dark-mode header #plus {
+    color: #f1c40f;
+}
+
+.dark-mode .header2 {
+    border: 1px solid #f1c40f;
+}
+
+.dark-mode .header #link {
+    border: 1px solid #f1c40f;
+}
+
+.dark-mode .content {
+    border: #f1c40f;
+}
+
+.dark-mode .content {
+    border-bottom: 1px solid #f1c40f;
+}
+
+.dark-mode .article {
+    border: 1px solid #f1c40f;
+    border-width: 0 1px;
+}
+
+.dark-mode .musicplayer {
+    border: 1px solid #f1c40f;
+    color: #f1c40f;
+}
+
+.dark-mode .musicplayer .circle1 {
+    background-color: #000316;
+    border: 1px solid #f1c40f;
+}
+
+.dark-mode .musicplayer .circle2 {
+    border: 1px solid #f1c40f;
+    background-color: #000316;
+}
+
+.dark-mode .musicplayer .circle3 {
+    background-color: rgba(252, 186, 3, 0.1);
+}
+
+.dark-mode .musicplayer .circle4 {
+    border: 1px solid rgba(252, 186, 3, 0.7);
+    background-color: #000316;
+}
+
+.dark-mode .player #musicsinger {
+    color: rgba(252, 186, 3, 0.5);
+}
+
+.dark-mode .player .bar {
+    background: #f1c40f;
+}
+
+.dark-mode .player .bar::-webkit-slider-thumb {
+    background: #f1c40f;
+}
+
+.dark-mode .player .bar::-moz-range-thumb {
+    background: #f1c40f;
+}
+
+.dark-mode .player .musicbutton button {
+    color: #f1c40f;
+}
+
+.dark-mode .musiclist {
+    border: 1px solid #f1c40f;
+}
+
+.dark-mode #sun {
+    display: none;
+}
+
+.dark-mode #moon {
+    display: inline-block;
+}
+
+.dark-mode .password input {
+    color: #f1c40f;
+}
+
+.dark-mode .password input::placeholder {
+    text-align: center;
+    color: rgba(241, 196, 15, 0.5);
+}
+
+.dark-mode .password button {
+    color: #f1c40f;
+}
+
+.dark-mode .password button:hover {
+    color: transparent;
+    text-shadow: 0 0 1.5px rgba(241, 196, 15, 0.5);
+}
+
+ */
+
+
+/* 다크모드 자동 */
+@media (prefers-color-scheme: dark) {
+
+    #sun {
+        display: none;
+    }
+    
+    #moon {
+        display: inline-block;
+    }
+
+    
+    body {
+        background-color: #000316;
+        color: #f1c40f;
+    }
+
+    a {
+        color: #f1c40f;
+    }
+
+    hr {
+        margin: 0;
+        background-color: #f1c40f;
+    }
+
+    ::selection {
+        color: transparent;
+        text-shadow: 0 0 2px rgba(252, 186, 3, 0.5);
+    }
+
+    header #tab {
+        border: 1px solid #f1c40f;
+    }
+
+    header #plus {
+        color: #f1c40f;
+    }
+
+    .header2 {
+        border: 1px solid #f1c40f;
+    }
+
+    .header #link {
+        border: 1px solid #f1c40f;
+    }
+
+    .content {
+        border: #f1c40f;
+    }
+
+    .content {
+        border-bottom: 1px solid #f1c40f;
+    }
+
+    .article {
+        border: 1px solid #f1c40f;
+        border-width: 0 1px;
+    }
+
+    .musicplayer {
+        border: 1px solid #f1c40f;
+        color: #f1c40f;
+    }
+
+    .musicplayer .circle1 {
+        background-color: #000316;
+        border: 1px solid #f1c40f;
+    }
+
+    .musicplayer .circle2 {
+        border: 1px solid #f1c40f;
+        background-color: #000316;
+    }
+
+    .musicplayer .circle3 {
+        background-color: rgba(252, 186, 3, 0.1);
+    }
+
+    .musicplayer .circle4 {
+        border: 1px solid rgba(252, 186, 3, 0.7);
+        background-color: #000316;
+    }
+
+    .player #musicsinger {
+        color: rgba(252, 186, 3, 0.5);
+    }
+
+    .player .bar {
+        background: #f1c40f;
+    }
+
+    .player .bar::-webkit-slider-thumb {
+        background: #f1c40f;
+    }
+
+    .player .bar::-moz-range-thumb {
+        background: #f1c40f;
+    }
+
+    .player .musicbutton button {
+        color: #f1c40f;
+    }
+
+    .musiclist {
+        border: 1px solid #f1c40f;
+    }
+
+    .homecovertotal {
+        background-color: #000316;
+    }
+
+    #sun {
+        display: none;
+    }
+    
+    #moon {
+        display: inline-block;
+    }
+
+    .password input {
+        color: #f1c40f;
+    }
+
+    .password input::placeholder {
+        text-align: center;
+        color: rgba(241, 196, 15, 0.5);
+    }
+
+    .password button {
+        color: #f1c40f;
+    }
+
+    .password button:hover {
+        color: transparent;
+        text-shadow: 0 0 1.5px rgba(241, 196, 15, 0.5);
+    }
+} 
+
+
+/* 페이드인 */
+
+
+.container{
+    animation: fadein 1.9s;
+    -moz-animation: fadein 1.9s; /* Firefox */
+-webkit-animation: fadein 1.9s;
+/* Safari and Chrome */
+-o-animation: fadein 1.9s;
+/* Opera */
+}
+
+@keyframes fadein {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@-webkit-keyframes fadein {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@-moz-keyframes fadein {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@-o-keyframes fadein {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+
+/* 반응형 */
+
+@media screen and (max-width: 1130px) {
+    .note #title {
+        width: 100%;
+    }
+
+    #space {
+        display: block;
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 960px) {
+    .content {
+        width: 60%;
+    }
+}
+
+@media screen and (max-width: 647px) {
+    .content {
+        width: 70%;
+    }
+
+    .menu span#category {
+        margin-right: 4%;
+    }
+}
+
+@media screen and (max-width: 557px) {
+    .content {
+        width: 80%;
+    }
+}
+
+@media screen and (max-width: 490px) {
+    .content {
+        width: 85%;
+    }
+
+    .menu span#category {
+        margin-right: 8%;
+        margin-top: 5px;
+        padding-top: 0;
+    }
+}
+
+@media screen and (max-width: 460px) {
+    .content {
+        width: 85%;
+        margin-bottom: 16%;
+
+    }
+
+    .article {
+        font-size: 0.8rem;
+        word-spacing: 120%;
+        line-height: 150%;
+    }
+
+    .page {
+        margin: 10% 0;
+    }
+}
+
+
+
